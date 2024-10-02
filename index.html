@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="es_en">
+
+<head>
+    <title>Alexandra Rincon | Cafecito</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="audience" content="mature">
+    <meta name="author" content="Cafecito">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="./css/perfil.css">
+    <link rel="stylesheet" href="./css/add.css">
+    <link rel="icon" type="image/x-icon" href="./img/favicon.png">
+</head>
+
+<style>
+    body {
+    font-family: 'Roboto', sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.upper-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    color: grey;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.upper-nav .nav-links {
+    display: flex;
+    align-items: center;
+    margin-right: 500px;
+}
+
+.upper-nav .nav-links a {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 0 15px;
+}
+
+.upper-nav .nav-links button {
+    border: 0;
+    border-radius: 6px;
+    background-color: #8fa2cc;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 7px 30px;
+    font-weight: 400;
+}
+
+.upper-nav img {
+    width: 149px;
+    margin-left: 500px;
+}
+
+body>div:nth-child(7)>em>a {
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li a {
+    margin-left: 25px;
+    color: #333;
+    text-decoration: none;
+    position: relative;
+}
+
+nav ul li a.active {
+    color: #7c64bf;
+}
+
+nav ul li a.active::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #7c64bf;
+}
+
+.profile-container {
+    text-align: center;
+}
+
+.profile-banner {
+    margin-top: 90px;
+    width: 100%;
+    max-width: 900px;
+    height: 200px;
+    background-color: #551a8b;
+    background-size: cover;
+    background-position: center;
+}
+
+.profile-picture {
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: -75px auto 20px;
+    background-color: #fff;
+    background-size: cover;
+    background-position: center;
+}
+
+
+h1 {
+    font-size: 24px;
+    margin-top: -9px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+.aficion {
+    text-align: center;
+    color: #4a4a4a;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.aficiones {
+    margin-top: 20px;
+}
+
+.instagram {
+    margin-top: 10px;
+}
+
+.post-descripcion {
+    margin: 20px auto;
+    max-width: 600px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .1);
+    font-family: 'Roboto', sans-serif;
+}
+
+.pay-methods {
+    text-align: center;
+}
+
+.post {
+    margin: 20px auto;
+    max-width: 600px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .1);
+    font-family: 'Roboto', sans-serif;
+}
+
+.botones-cafe {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botones-cafe button {
+    border: 0;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    padding: 7px 10px;
+    font-weight: 400;
+}
+
+.botones-cafe img {
+    max-width: 100%;
+    height: auto;
+    margin-right: none;
+}
+
+.cantidad-cafes {
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+.ayudame {
+    margin-top: 30px;
+}
+
+.increment {
+    background-color: #8fa2cc;
+    border: 0;
+    border-radius: 6px;
+    color: #fff;
+    font-weight: 700;
+}
+
+.decrement {
+    background-color: #8fa2cc;
+    border: 0;
+    border-radius: 6px;
+    color: #fff;
+    font-weight: 700;
+}
+
+.total-cafecitos {
+    color: #7c64bf;
+}
+
+.buttones button.active {
+    background-color: red;
+}
+
+.aficiones-button {
+    background-color: #e9e1ff;
+    padding: 8px 5px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #7c64bf;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    text-decoration: none;
+    border: none;
+}
+
+.buttones button {
+    text-align: center;
+}
+
+
+.more {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    border: 0;
+    border-radius: 6px;
+    background-color: #8fa2cc;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 7px 30px;
+    font-weight: 400;
+}
+
+.post input {
+    width: 100%;
+    border-radius: 6px;
+    background-color: #fff;
+    border: 1px solid #c4c4c4;
+    font-size: 16px;
+    margin-top: 10px;
+    padding: 12px 16px;
+    box-sizing: border-box;
+    color: #000;
+    font-weight: 300;
+}
+
+.top-donadores {
+    background-color: #8fa2cc;
+    border-radius: 2px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+}
+
+th {
+    padding: 8px;
+    text-align: left;
+}
+
+
+#btn3,
+#btn5,
+#btn10 {
+    color: black;
+    margin: 0;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    background-color: transparent;
+    border: 1px solid #c4c4c4;
+    font-size: 20px;
+    border-radius: 0;
+    cursor: pointer;
+}
+
+#btn3:active,
+#btn5:active,
+#btn10:active {
+    color: grey;
+    margin: 0;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    background-color: #c4c4c4;
+    border: 1px solid #c4c4c4;
+    font-size: 20px;
+    border-radius: 0;
+    cursor: pointer;
+}
+
+td.total-cafecitos {
+    padding: 8px;
+}
+
+#mensaje {
+    color: #000;
+    border-radius: 6px;
+    background-color: #fff;
+    border: 1px solid #c4c4c4;
+    width: 100%;
+    height: 100px;
+    font-size: 16px;
+    padding: 12px 16px;
+    box-sizing: border-box;
+    max-width: 100%;
+    min-width: 100%;
+    font-weight: 300;
+}
+
+footer {
+    padding: 32px;
+    display: flex;
+    background-color: #f9f9f9;
+    color: #7c64bf;
+    font-weight: 700;
+    align-items: center;
+    margin-top: 5px;
+}
+
+footer p {
+    font-size: 15px;
+    text-decoration: underline;
+    text-align: right;
+    margin: 0;
+    padding: 5px;
+}
+
+@media only screen and (max-width: 480px) {
+    .upper-nav {
+        flex-direction: row;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .upper-nav img {
+        width: 149px;
+        margin-left: 500px;
+    }
+
+    .upper-nav .nav-links {
+        margin-right: 0;
+        margin-top: 10px;
+    }
+
+    #mercadopago>img {
+        width: 350px;
+    }
+
+    #bitcoin>img {
+        width: 350px;
+    }
+
+    .upper-nav img {
+        width: 80px;
+        margin-left: 0;
+    }
+
+    .profile-banner {
+        margin-top: 60px;
+        height: 150px;
+    }
+
+    .profile-picture {
+        width: 80px;
+        height: 80px;
+        margin: -40px auto 10px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .aficion {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+        margin-left: 15px;
+    }
+
+    .post {
+        width: 90%;
+        height: auto;
+        padding: 10px;
+        margin: 15px auto;
+    }
+
+    .post h2 {
+        font-size: 16px;
+        margin-left: 25px;
+    }
+
+    .upper-nav .nav-links {
+        display: none;
+    }
+}
+</style>
+
+<body>
+    <nav class="upper-nav">
+        <div class="logo-container">
+            <img src="./img/logo.png" alt="Logo Cafecito" class="logo cafecito">
+        </div>
+        <div class="nav-links">
+            <a onclick="explorar()">Explorar</a>
+            <button onclick="ingresar()">Ingresar</button>
+        </div>
+    </nav>
+    <div style="text-align: center;">
+        <img src="./img/banner.jpg" class="profile-banner" alt="Profile Banner" />
+    </div>
+    <img src="./img/profile.jpg" class="profile-picture" alt="Profile Picture" style="display: block; margin: 20 auto;">
+    <h1>Alexandra Rincon<img src="./img/compartir.png" style="width: 27px; cursor: pointer;"
+            onclick="mostrarVentanaCompartir()"> </h1>
+    <nav>
+        <p class="aficion">Arte</p>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="./perfil.html" class="active">Perfil</a></li>
+                <li><a href="./galery.html">Galeria</a></li>
+                <li><a href="./posts.html">Posts</a></li>
+                <li><a href="./dates.html">Planes</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="post-descripcion">
+        <h1 style="margin-top: 30px;">Descripción</h1>
+        <em>Telegram💌 <a href="https://t.me/Alexandra-rincon" target="_blank">https://t.me/Alexandra rincon</a></em>
+        <br>
+        <a href="https://instagram.com/"><img class="instagram" src="./img/instagram.png" alt="instagram"></a>
+        <div class="aficiones">
+            <button class="aficiones-button">Fotografía</button>
+            <button class="aficiones-button">Redes sociales</button>
+            <button class="aficiones-button">Arte</button>
+            <button class="aficiones-button">Otros</button>
+        </div>
+        <p><img src="./img/favicon.png" style="max-width: 20px; margin-right: 10px; margin-top: 10px;" alt="">x 189
+            recibidos</p>
+        <p><img src="./img/suscriptores.png" style="max-width: 20px; margin-right: 10px; margin-top: 0px;" alt="">x 58
+            suscriptores</p>
+    </div>
+    <div class="post">
+        <h1 style="margin-top: 20px;">Top Donadores</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Posición</th>
+                    <th>Nombre</th>
+                    <th>Cafecitos</th>
+                </tr>
+                <tr>
+                    <th colspan="3">
+                        <hr>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><button class="top-donadores">1</button></td>
+                    <td>PussyLover</td>
+                    <td class="total-cafecitos">4</td>
+                </tr>
+                <tr>
+                    <td><button class="top-donadores">2</button></td>
+                    <td>Daniel</td>
+                    <td class="total-cafecitos">2</td>
+                </tr>
+                <tr>
+                    <td><button class="top-donadores">3</button></td>
+                    <td>Markitos</td>
+                    <td class="total-cafecitos">3</td>
+                </tr>
+                <tr>
+                    <td><button class="top-donadores">4</button></td>
+                    <td>Zaca</td>
+                    <td class="total-cafecitos">2</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="post">
+        <h1 class="ayudame">¡Ayudame con un café!</h1>
+        <div class="botones-cafe">
+            <div class="cafecito-button" style="padding: 10px;">
+                <button class="decrement" onclick="decrement()">-</button>
+                <button class="aumentar" id="numero-cafe"><span>0</span></button>
+                <button class="increment" onclick="increment()">+</button>
+
+            </div>
+            <img class="cantidad-cafes" src="./img/favicon.png" alt=""> <span
+                style="margin-right: 6px;"><strong>x</strong></span>
+            <button id="btn3" onclick="toggleButton('btn3')">3</button>
+            <button id="btn5" onclick="toggleButton('btn5')">5</button>
+            <button id="btn10" onclick="toggleButton('btn10')">10</button>
+        </div>
+        <form action="./js/action.js"></form>
+        <input type="text" placeholder="Nombre">
+        <div> <input type="text" placeholder="Contacto (Campo oculto al publico)">
+        </div>
+        <input id="mensaje" type="text" placeholder="Mensaje (opcional)">
+
+        <p style="text-align: center;">Invitame 1 Cafecito (ARS $<span id="precioTotal">800</span>) con</p>
+        <div class="pay-methods">
+            <a href="./paycheck.html" id="mercadopago"><img src="./img/mercadopago.png" alt="mercadopago"></a>
+            <a href="#" id="bitcoin" onclick="mostrarQR()">
+                <img src="./img/bitcoin.png" alt="bitcoin">
+            </a>
+        </div>
+        <div>
+        </div>
+        <p>* MercadoPago procesa pagos de cualquier parte del mundo.
+            <br>* Los cafecitos desbloquean contenido de la galeria.
+        </p>
+    </div>
+
+    <div class="post">
+        <img style="float: right;" src="./img/bion.png" alt="">
+        <p><strong>PussyLover</strong> Te compró 2 cafecitos</h1>
+        <p>Hace 1 semana</p>
+        <p class="comentario">Te hable al face</p>
+    </div>
+    <div class="post">
+        <img style="float: right;" src="./img/bion.png" alt="">
+        <p><strong>Zaca</strong> Te compró 2 cafecitos</h1>
+        <p>Hace 2 meses</p>
+    </div>
+    <div class="post">
+        <img style="float: right;" src="./img/bion.png" alt="">
+        <p><strong>Criis</strong> Te compró 2 cafecitos</h1>
+        <p>Hace 5 meses</p>
+    </div>
+
+    <button class="more">Cargar Mas Cafesitos</button>
+
+
+    <footer>
+        <h3>© 2024 Cafecito.</h3>
+        <div>
+
+            <p>Preguntas frecuentes</p>
+            <p>Términos y condiciones</p>
+            <p>Política de privacidad</p>
+    </footer>
+    <script src="./js/ventana.js"></script>
+    <script>
+        var cantidadCafe = 1;
+
+        // Incrementar la cantidad de cafés
+        function increment() {
+            cantidadCafe++;
+            actualizarNumeroCafe();
+        }
+
+        // Decrementar la cantidad de cafés
+        function decrement() {
+            if (cantidadCafe > 1) {
+                cantidadCafe--;
+                actualizarNumeroCafe();
+            }
+        }
+
+        // Función para actualizar el número de cafés en el botón
+        function actualizarNumeroCafe() {
+            document.getElementById('numero-cafe').innerText = cantidadCafe;
+        }
+
+        // Función para manejar el evento de toogle en los botones
+        function toggleButton(id) {
+            // Obtener el botón por su ID
+            var boton = document.getElementById(id);
+
+            // Verificar si el botón está activo o inactivo
+            if (boton.classList.contains('activo')) {
+                boton.classList.remove('activo');
+                cantidadCafe = parseInt(document.getElementById('numero-cafe').innerText);
+            } else {
+                boton.classList.add('activo');
+                cantidadCafe = parseInt(document.getElementById('numero-cafe').innerText) + parseInt(boton.innerText);
+            }
+
+            // Actualizar el número de café en el botón
+            actualizarNumeroCafe();
+        }
+    </script>
+
+    <script>
+        function mostrarQR() {
+            document.querySelector('.post form').style.display = 'none';
+
+            document.getElementById('qrContainer').style.display = 'block';
+        }
+    </script>
+    <script>
+        var numeroCafe = document.getElementById("numero-cafe");
+
+        function increment() {
+            var numeroActual = parseInt(numeroCafe.innerText);
+            numeroCafe.innerText = numeroActual + 1;
+        }
+
+        function decrement() {
+            var numeroActual = parseInt(numeroCafe.innerText);
+            if (numeroActual > 1) {
+                numeroCafe.innerText = numeroActual - 1;
+            }
+        }
+    </script>
+</body>
+
+</html>

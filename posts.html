@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Alexandra Rincon | Cafecito</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/IMG/favicon.png">
+    <meta name="audience" content="mature">
+    <meta name="author" content="Cafecito">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="./css/posts.css">
+</head>
+
+<style>
+    body {
+    font-family: 'Roboto', sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #333;
+}
+
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    margin-right: 15px;
+}
+
+.hamburger-menu div {
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.upper-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    color: grey;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.upper-nav .nav-links {
+    display: flex;
+    align-items: center;
+    margin-right: 500px;
+}
+
+.upper-nav .nav-links a {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 0 15px;
+}
+
+.upper-nav .nav-links button {
+    border: 0;
+    border-radius: 6px;
+    background-color: #8fa2cc;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 7px 30px;
+    font-weight: 400;
+}
+
+.upper-nav img {
+    width: 149px;
+    margin-left: 500px;
+}
+
+.profile-banner {
+    margin-top: 90px;
+    width: 100%;
+    max-width: 900px;
+    height: 200px;
+    background-color: #551a8b;
+    background-size: cover;
+    background-position: center;
+}
+
+.profile-picture {
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: -75px auto 20px;
+    background-color: #fff;
+    background-size: cover;
+    background-position: center;
+}
+
+h1 {
+    font-size: 24px;
+    margin-top: -13px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.aficion {
+    color: #4a4a4a;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li a {
+    margin-left: 25px;
+    color: #333;
+    text-decoration: none;
+    position: relative;
+}
+
+nav ul li a.active {
+    color: #7c64bf;
+}
+
+nav ul li a.active::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #7c64bf;
+}
+
+.post {
+    margin: 20px auto;
+    width: 598px;
+    height: 278px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .1);
+    font-family: 'Roboto', sans-serif;
+}
+
+.post-image {
+    width: 90%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.post h2 {
+    float: left;
+    margin-left: 35px;
+    font-size: 18px;
+}
+
+.ventana-compartir {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 2px solid #ccc;
+    width: 2000px;
+    height: 160px;
+    max-width: 420px;
+    box-sizing: border-box;
+}
+
+.ventana-compartir .navsito {
+    background-color: #8fa2cc;
+    overflow: hidden;
+    width: 100%;
+}
+
+.ventana-compartir h2 {
+    font-size: 20px;
+    color: white;
+    float: left;
+}
+
+.ventana-compartir input {
+    width: 100%;
+    margin: 10px 0;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.ventana-compartir button {
+    background-color: #8fa2cc;
+    color: #fff;
+    border: 0;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 10px;
+    margin-right: 5px;
+    float: right;
+}
+
+.ventana-compartir .close-popad {
+    background-color: #8fa2cc;
+    color: #fff;
+    border: 0;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 10px;
+    margin-left: 5px;
+}
+
+.ventana-compartir::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+footer {
+    padding: 32px;
+    display: flex;
+    background-color: #f9f9f9;
+    color: #7c64bf;
+    font-weight: 700;
+    align-items: center;
+    margin-top: 5px;
+}
+
+footer p {
+    font-size: 15px;
+    text-decoration: underline;
+    text-align: right;
+    margin: 0;
+    padding: 5px;
+}
+
+@media only screen and (max-width: 480px) {
+    .upper-nav {
+        flex-direction: row;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .upper-nav .nav-links {
+        margin-right: 0;
+        margin-top: 10px;
+    }
+
+    #mercadopago>img {
+        width: 350px;
+    }
+
+    #bitcoin>img {
+        width: 350px;
+    }
+
+    .upper-nav img {
+        width: 80px;
+        margin-left: 0;
+    }
+
+    .profile-banner {
+        margin-top: 60px;
+        height: 150px;
+    }
+
+    .profile-picture {
+        width: 80px;
+        height: 80px;
+        margin: -40px auto 10px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .aficion {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+        margin-left: 15px;
+    }
+
+    .post {
+        width: 90%;
+        height: auto;
+        padding: 10px;
+        margin: 15px auto;
+    }
+
+    .post h2 {
+        font-size: 16px;
+        margin-left: 25px;
+    }
+
+    .upper-nav .nav-links {
+        display: none;
+    }
+}
+</style>
+
+<body>
+    <nav class="upper-nav">
+        <div class="logo-container">
+            <img src="./img/logo.png" alt="Logo Cafecito" class="logo">
+        </div>
+        <div class="nav-links">
+            <a onclick="explorar()">Explorar</a>
+            <button onclick="ingresar()">Ingresar</button>
+        </div>
+    </nav>
+
+    <div>
+        <img src="./img/banner.jpg" class="profile-banner" alt="Profile Banner">
+    </div>
+
+    <img src="./img/profile.jpg" class="profile-picture" alt="Profile Picture" />
+    <h1>Alexandra Rincon<img src="./img/compartir.png" style="width: 27px; cursor: pointer;"
+            onclick="mostrarVentanaCompartir()"> </h1>
+    </h1>
+
+    <nav>
+        <p class="aficion">Arte</p>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="./index.html">Perfil</a></li>
+                <li><a href="./galery.html">Galeria</a></li>
+                <li><a href="./posts.html" class="active">Posts</a></li>
+                <li><a href="./dates.html">Planes</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="post">
+        <h2> <img src="./img/lock.png" style="width: 12px;"></i> 10 minutos mojandome</h2>
+        <img class="post-image" src="/IMG/post.png" alt="Image">
+    </div>
+    <div class="post">
+        <h2> <img src="./img/lock.png" style="width: 12px;"></i> Que tal me ves?</h2>
+        <img class="post-image" src="/IMG/post.png" alt="Image">
+    </div>
+    <div class="post">
+        <h2> <img src="./img/lock.png" style="width: 12px;"></i> Disfrazzz</h2>
+        <img class="post-image" src="./IMG/post.png" alt="Image">
+    </div>
+    <footer>
+        <h3>© 2024 Cafecito.</h3>
+        <div>
+
+            <p>Preguntas frecuentes</p>
+            <p>Términos y condiciones</p>
+            <p>Política de privacidad</p>
+    </footer>
+    <script src="./js/ventana.js"></script>
+
+</body>
+
+</html>

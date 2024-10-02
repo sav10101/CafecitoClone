@@ -1,0 +1,62 @@
+.ventana-compartir {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 2px solid #ccc;
+    width: 2000px;
+    height: 160px;
+    max-width: 420px;
+    box-sizing: border-box;
+}
+
+.ventana-compartir .navsito {
+    background-color: #8fa2cc;
+    overflow: hidden;
+    width: 100%;
+}
+
+.ventana-compartir h2 {
+    font-size: 20px;
+    color: white;
+    float: left;
+}
+
+.ventana-compartir input {
+    width: 100%;
+    margin: 10px 0;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.ventana-compartir button {
+    background-color: #8fa2cc;
+    color: #fff;
+    border: 0;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 10px;
+    margin-right: 5px;
+    float: right;
+}
+
+.ventana-compartir .close-popad {
+    background-color: #8fa2cc;
+    color: #fff;
+    border: 0;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 10px;
+    margin-left: 5px;
+}
+
+.ventana-compartir::after {
+    content: "";
+    display: table;
+    clear: both;
+}
